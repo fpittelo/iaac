@@ -1,5 +1,5 @@
 ---
-- hosts: Build_Server
+- hosts: Build Server
   become: yes
   remote_user: adminfpi
   tasks:
