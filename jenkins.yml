@@ -11,7 +11,7 @@
       apt: name=default-jdk-headless update_cache state=latest
 
     - name: install Jenkins repository keys
-      wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
     - name: install Jenkins
       apt: name=Jenkins update_cache=yes state=latest
