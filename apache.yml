@@ -8,10 +8,18 @@
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
 
+    - name: Install net-tools
+      apt: name=openssh-server update_cache=yes state=latest
+
     - name: Install Apache
       apt: name=apache2 update_cache=yes state=latest
 
     - name: ensure apache is running
       service:
         name: apache2
-        state: started  
+        state: started
+
+    - name: ensure SSH Server is running
+      service:
+        name: ssh
+        state: started
