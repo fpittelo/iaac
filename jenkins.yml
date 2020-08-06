@@ -3,7 +3,7 @@
   become: yes
   remote_user: adminfpi
   tasks:
-    - name: Setup openjdk-r/ppa
+    - name: Setup OpenJDK Repository
       apt_repository:
         repo: 'ppa:openjdk-r/ppa'
       become: true
@@ -16,7 +16,7 @@
         update_cache: 'yes'
       become: true
 
-    - name: Set Java path
+    - name: Set Java Path
       set_fact:
         java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
 
