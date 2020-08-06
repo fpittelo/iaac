@@ -1,0 +1,17 @@
+---
+- hosts: buildservers
+  become: yes
+  remote_user: adminfpi
+  tasks:
+    - name: Install prerequisites
+      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      loop: [ 'aptitude' ]
+
+    - name: install Jenkins
+      apt: name=Jenkins update_cache=yes state=latest
+
+    - name: ensure Jenkins Server is running
+      service:
+        name: Jenkins
+        state: started
+        enabled: true
