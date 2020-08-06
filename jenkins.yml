@@ -16,9 +16,9 @@
         update_cache: 'yes'
       become: true
 
-- name: Set Java path
-  set_fact:
-    java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
+    - name: Set Java path
+      set_fact:
+        java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
 
 #   - name: Install prerequisites
 #     apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
