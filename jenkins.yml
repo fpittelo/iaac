@@ -8,7 +8,7 @@
         repo: 'ppa:openjdk-r/ppa'
       become: true
 
-    - name: Install OpenJDK 1.8.0, 1.11 and 1.12
+    - name: Install OpenJDK 14
       apt:
         name:
           - openjdk-14-jdk
