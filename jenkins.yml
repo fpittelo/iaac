@@ -2,6 +2,9 @@
 - hosts: Build_Server
   become: yes
   remote_user: adminfpi
+
+# INSTALL JAVA ##########################
+
   tasks:
     - name: Setup OpenJDK Repository
       apt_repository:
@@ -20,12 +23,14 @@
       set_fact:
         java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
 
+# INSTALL JENKINS ######################
+
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
 
-#   - name: install Jenkins repository keys
-#     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    - name: install Jenkins repository keys
+      action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 #   - name: install Jenkins
 #     apt: name=Jenkins update_cache=yes state=latest
