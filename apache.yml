@@ -1,6 +1,7 @@
 
 ---
 - hosts: servers
+  sudo: yes
   remote_user: adminfpi
   tasks:
     - name: Install prerequisites
