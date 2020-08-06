@@ -1,0 +1,12 @@
+---
+- hosts: servers
+  remote_user: adminfpi
+  tasks:
+  - name: ensure apache is installed
+    apt:
+      install: httpd
+#  tasks:
+#  - name: ensure apache is running
+#    service:
+#      name: httpd
+#      state: started
