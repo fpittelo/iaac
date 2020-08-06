@@ -39,6 +39,9 @@
         path: /etc/apt/sources.list
         line: deb https://pkg.jenkins.io/debian-stable binary/
         create: yes
+    
+    - name: Update Cache
+      apt:
       update_cache: yes
 
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
