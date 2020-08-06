@@ -41,8 +41,8 @@
         create: yes
     
     - name: Update Cache
-      apt:
-      update_cache: yes
+      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      loop: [ 'aptitude' ]
 
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
