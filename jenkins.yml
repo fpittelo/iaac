@@ -8,6 +8,13 @@
         repo: 'ppa:openjdk-r/ppa'
       become: true
 
+    - name: Install OpenJDK 1.8.0, 1.11 and 1.12
+      apt:
+        name:
+          - openjdk-14-jdk
+        state: present
+        update_cache: 'yes'
+      become: true
 
 #   - name: Install prerequisites
 #     apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
