@@ -7,6 +7,9 @@
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
 
+    - name: install net-tools
+        apt: name=net-tools update_cache=yes state=latest
+
     - name: Install SSH Server
       apt: name=openssh-server update_cache=yes state=latest
 
@@ -14,3 +17,4 @@
       service:
         name: ssh
         state: started
+        enabled: true
