@@ -7,8 +7,8 @@
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
 
-    - name: Install Java
-      apt: name=openjdk-14-jre-headless update_cache state=latest
+ #   - name: Install Java
+ #     apt: name=openjdk-14-jre-headless update_cache state=latest
 
  #   - name: install Jenkins repository keys
  #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
