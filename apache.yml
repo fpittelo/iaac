@@ -1,15 +1,12 @@
 
 ---
-- hosts: servers
+- hosts: webservers
   become: yes
   remote_user: adminfpi
   tasks:
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
-
-    - name: Install SSH Server
-      apt: name=openssh-server update_cache=yes state=latest
 
     - name: Install Apache
       apt: name=apache2 update_cache=yes state=latest
@@ -19,8 +16,3 @@
         name: apache2
         state: started
         enabled: true
-
-    - name: ensure SSH Server is running
-      service:
-        name: ssh
-        state: started
