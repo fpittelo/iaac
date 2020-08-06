@@ -25,16 +25,16 @@
 
 # INSTALL JENKINS ######################
 
-    - name: Install prerequisites
+    - name: Install Prerequisites
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
 
-    - name: install Jenkins repository keys
-      get_url:
+    - name: Install Jenkins Repository Keys
+      apt_key:
         url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
-        dest: /home/adminfpi/jenkins.io.key
-        apt-key add jenkins.io.key
-        become true
+        state: present
+        update_cache: 'yes'
+    
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 #   - name: install Jenkins
