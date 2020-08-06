@@ -20,9 +20,9 @@
       set_fact:
         java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
 
-#   - name: Install prerequisites
-#     apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
-#     loop: [ 'aptitude' ]
+    - name: Install prerequisites
+      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      loop: [ 'aptitude' ]
 
 #   - name: install Jenkins repository keys
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
