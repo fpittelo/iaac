@@ -33,7 +33,13 @@
       apt_key:
         url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
         state: present
-    
+
+    - name: Add Jenkins Source
+      lineinfile:
+        path: /etc/apt/sources.list
+        line: deb https://pkg.jenkins.io/debian-stable binary/
+        create: yes
+
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 #   - name: install Jenkins
