@@ -33,6 +33,8 @@
       get_url:
         url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
         dest: /home/adminfpi/jenkins.io.key
+        apt-key add jenkins.io.key
+        become true
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 #   - name: install Jenkins
