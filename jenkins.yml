@@ -30,7 +30,7 @@
       loop: [ 'aptitude' ]
 
     - name: install Jenkins repository keys
-      action: shell get_url - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      action: shell get_url https://pkg.jenkins.io/debian-stable/jenkins.io.key dest $home/iaac
 #     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 #   - name: install Jenkins
