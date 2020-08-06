@@ -1,6 +1,6 @@
 ---
 - hosts: servers
-  sudo: yes
+  become: yes
   remote_user: adminfpi
 #  tasks:
 #  - name: ensure apache is installed
