@@ -44,11 +44,11 @@
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
 
-#   - name: Install Jenkins
-#     apt:
-#        name:
-#          - jenkins
-#        state: present
-#      become: true
+    - name: Install Jenkins
+      apt:
+         name:
+           - jenkins
+         state: present
+       become: true
 
 ########################################
