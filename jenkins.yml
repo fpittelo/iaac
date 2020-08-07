@@ -51,4 +51,10 @@
          state: present
       become: true
 
+    - name: ensure apache is running
+      service:
+        name: jenkins
+        state: started
+        enabled: true
+
 ########################################
