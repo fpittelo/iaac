@@ -4,14 +4,14 @@
   remote_user: adminfpi
   tasks:
     - name: Install prerequisites
-      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
 
     - name: install net-tools
-      apt: name=net-tools update_cache=yes state=latest
+      apt: name=net-tools update_cache=yes
 
     - name: Install SSH Server
-      apt: name=openssh-server update_cache=yes state=latest
+      apt: name=openssh-server update_cache=yes
 
     - name: ensure SSH Server is running
       service:
