@@ -39,7 +39,7 @@
         path: /etc/apt/sources.list
         line: deb https://pkg.jenkins.io/debian-stable binary/
         create: yes
-    
+
     - name: Update Cache
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
