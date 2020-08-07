@@ -26,7 +26,7 @@
 # INSTALL JENKINS ######################
 
     - name: Install Prerequisites
-      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
 
     - name: Install Jenkins Repository Keys
