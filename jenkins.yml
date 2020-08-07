@@ -51,7 +51,7 @@
          state: present
       become: true
 
-    - name: ensure apache is running
+    - name: ensure Jenkins is running
       service:
         name: jenkins
         state: started
