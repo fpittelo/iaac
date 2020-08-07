@@ -18,3 +18,6 @@
         name: ssh
         state: started
         enabled: true
+
+    - name: install Members
+      apt: name=members update_cache=yes
