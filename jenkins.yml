@@ -3,7 +3,7 @@
   become: yes
   remote_user: adminfpi
 
-# INSTALL JAVA ##########################
+# INSTALL JAVA #########################
 
   tasks:
     - name: Setup OpenJDK Repository
@@ -51,13 +51,4 @@
         state: present
       become: true
 
-#     action: shell wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-
-#   - name: install Jenkins
-#     apt: name=Jenkins update_cache=yes state=latest
-#
-#   - name: ensure Jenkins Server is running
-#     service:
-#       name: Jenkins
-#       state: started
-#       enabled: true
+########################################
