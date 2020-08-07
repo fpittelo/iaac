@@ -15,7 +15,6 @@
       apt:
         name:
           - openjdk-8-jre
-          - openjdk-14-jdk
         state: present
         update_cache: 'yes'
       become: true
