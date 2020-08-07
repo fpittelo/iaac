@@ -22,7 +22,7 @@
 
     - name: Set Java Path
       set_fact:
-        java_path: /usr/lib/jvm/java-1.14.0-openjdk-amd64
+        java_path: /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 # INSTALL JENKINS ######################
 
