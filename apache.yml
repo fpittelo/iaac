@@ -39,6 +39,6 @@
 
     - name: Ensure MariaDB is Running
       service:
-        name: myslq
+        name: mysql
         state: started
         enabled: true
