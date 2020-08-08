@@ -64,6 +64,20 @@
         state: started
         enabled: true
 
+# INSTALL NGINX #############################################
+
+    - name: Install Nginx
+      apt:
+        name:
+          - nginx
+        state: present
+
+    - name: ensure Kibana is running
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
 # INSTALL KIBANA #############################################
 
     - name: Install Kibana
@@ -89,6 +103,20 @@
     - name: ensure LogStash is running
       service:
         name: logstash
+        state: started
+        enabled: true
+
+# INSTALL Filebeat #############################################
+
+    - name: Install Filebeat
+      apt:
+        name:
+          - filebeat
+        state: present
+
+    - name: ensure Kibana is running
+      service:
+        name: filebeat
         state: started
         enabled: true
 
