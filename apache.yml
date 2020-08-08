@@ -11,8 +11,15 @@
     - name: Install Apache
       apt: name=apache2 update_cache=yes
 
-    - name: Install PostgreSQL
-      apt: name=postgresql update_cache=yes
+    - name: Remove PostgreSQL
+      apt:
+        name: postgresql
+        state: absent
+
+    - name: Install Mysql
+      apt:
+        name: mysql
+        state: present
 
     - name: Install PHP
       apt:
@@ -25,8 +32,8 @@
         state: started
         enabled: true
 
-    - name: ensure Postgres Is Running
+    - name: Ensure Mysql is Running
       service:
-        name: postgresql
+        name: mysql
         state: started
         enabled: true
