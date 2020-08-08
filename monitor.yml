@@ -3,6 +3,29 @@
   become: yes
   remote_user: adminfpi
   tasks:
+
+# INSTALL JAVA #########################
+
+  tasks:
+    - name: Setup OpenJDK Repository
+      apt_repository:
+        repo: 'ppa:openjdk-r/ppa'
+      become: true
+
+    - name: Install OpenJDK
+      apt:
+        name:
+          - openjdk-8-jre
+        state: present
+        update_cache: 'yes'
+      become: true
+
+    - name: Set Java Path
+      set_fact:
+        java_path: /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+# INSTALL ElasticSearch #####################################
+
     - name: Add ElasticSearch Source
       lineinfile:
         path: /etc/apt/sources.list
@@ -37,6 +60,13 @@
         name: elasticsearch
         state: started
         enabled: true
+
+# INSTALL KIBANA #############################################
+     name: Install Kibana
+      apt:
+        name:
+          - kibana
+        state: present
 
 # ElasticSearch FIREWALL ######################################
 
