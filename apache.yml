@@ -14,8 +14,14 @@
     - name: Install PostgreSQL
       apt: name=postgresql update_cache=yes
 
-    - name: ensure apache is running
+    - name: Ensure Aache is Running
       service:
         name: apache2
+        state: started
+        enabled: true
+
+    - name: ensure Postgres Is Running
+      service:
+        name: postgres
         state: started
         enabled: true
