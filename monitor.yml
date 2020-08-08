@@ -29,7 +29,7 @@
     - name: Add ElasticSearch Port
       lineinfile:
         path: /etc/elasticsearch/elasticsearch.yml
-        line: http.port: 9200
+        line: "http.port: 9200"
         create: yes
 
     - name: ensure ElasticSearch is running
