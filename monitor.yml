@@ -62,7 +62,8 @@
         enabled: true
 
 # INSTALL KIBANA #############################################
-     name: Install Kibana
+
+    - name: Install Kibana
       apt:
         name:
           - kibana
