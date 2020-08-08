@@ -3,6 +3,8 @@
   become: yes
   remote_user: adminfpi
   tasks:
-    - name: Install ElasticSearch Keys
-      url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
-      state: present
+    - name: Add Jenkins Source
+      lineinfile:
+        path: /etc/apt/sources.list
+        line: deb https://pkg.jenkins.io/debian-stable binary/
+        create: yes
