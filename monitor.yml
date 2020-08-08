@@ -2,14 +2,14 @@
 - hosts: servers
   become: yes
   remote_user: adminfpi
-    tasks:
-      - name: Install ElasticSearch Repository Keys
-        apt_key:
-        url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
-        state: present
+  tasks:
+    - name: Install ElasticSearch Repository Keys
+      apt_key:
+      url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+      state: present
 
-      - name: Add ElasticSearch Source
-        lineinfile:
-        path: /etc/apt/sources.list
-        line: deb https://artifacts.elastic.co/packages/7.x/apt stable main
-        create: yes
+    - name: Add ElasticSearch Source
+      lineinfile:
+      path: /etc/apt/sources.list
+      line: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+      create: yes
