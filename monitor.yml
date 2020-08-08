@@ -72,6 +72,12 @@
           - kibana
         state: present
 
+    - name: ensure Kibana is running
+      service:
+        name: kibana
+        state: started
+        enabled: true
+
 # ElasticSearch FIREWALL ######################################
 
     - name: Enable UFW And Deny All
