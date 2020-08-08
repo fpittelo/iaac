@@ -6,7 +6,6 @@
 
 # INSTALL JAVA #########################
 
-  tasks:
     - name: Setup OpenJDK Repository
       apt_repository:
         repo: 'ppa:openjdk-r/ppa'
