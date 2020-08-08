@@ -78,6 +78,20 @@
         state: started
         enabled: true
 
+# INSTALL LOGSTASH #############################################
+
+    - name: Install LogStash
+      apt:
+        name:
+          - logstash
+        state: present
+
+    - name: ensure LogStash is running
+      service:
+        name: logstash
+        state: started
+        enabled: true
+
 # ElasticSearch FIREWALL ######################################
 
     - name: Enable UFW And Deny All
