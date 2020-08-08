@@ -3,7 +3,6 @@
   become: yes
   remote_user: adminfpi
   tasks:
-    - name: Install Jenkins Repository Keys
-      apt_key:
-        url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
-        state: present
+    - name: Install ElasticSearch Keys
+      url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+      state: present
