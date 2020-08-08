@@ -20,6 +20,18 @@
           - elasticsearch
         state: present
 
+    - name: Add ElasticSearch IP
+      lineinfile:
+        path: /etc/elasticsearch/elasticsearch.yml
+        line: network.host: 192.168.0.108
+        create: yes
+
+    - name: Add ElasticSearch Port
+      lineinfile:
+        path: /etc/elasticsearch/elasticsearch.yml
+        line: http.port: 9200
+        create: yes
+
     - name: ensure ElasticSearch is running
       service:
         name: elasticsearch
