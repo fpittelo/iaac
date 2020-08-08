@@ -28,10 +28,10 @@
         policy: deny
 
     - name: Set Logging
-        ufw:
+      ufw:
         logging: 'on'
 
     - name: Allow SSH
-        ufw:
+      ufw:
         rule: allow
         name: OpenSSH 
