@@ -1,6 +1,6 @@
 
 ---
-- hosts: webservers
+- hosts: web
   become: yes
   remote_user: adminfpi
   tasks:
