@@ -18,3 +18,4 @@
       apt:
         name: elasticsearch
         state: present
+        update_cache=yes
