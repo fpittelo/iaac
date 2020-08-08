@@ -14,10 +14,6 @@
         url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
         state: present
 
-    - name: Update Cache
-      apt:
-        update_cache=yes
-
     - name: Install ElasticSearch
       apt:
         name:
