@@ -24,11 +24,11 @@
 
     - name: Firewall up and running
       service: firewalld
-      enabled: true
-      state: started
+        enabled: true
+        state: started
 
     - name: Firewall SSH Allow
       firewalld: SSH
-      permanent: true
-      state: enabled
-      immediate: yes
+        permanent: true
+        state: enabled
+        immediate: yes
