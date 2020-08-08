@@ -6,9 +6,10 @@
 
 # INSTALL JAVA #########################
 
-  - name: Setup OpenJDK Repository
+    - name: Setup OpenJDK Repository
       apt_repository:
-      repo: 'ppa:openjdk-r/ppa'
+        repo: 'ppa:openjdk-r/ppa'
+      become: true
 
     - name: Install OpenJDK
       apt:
@@ -16,6 +17,7 @@
           - openjdk-8-jre
         state: present
         update_cache: 'yes'
+      become: true
 
     - name: Set Java Path
       set_fact:
