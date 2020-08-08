@@ -16,6 +16,11 @@
         name: postgresql
         state: absent
 
+    - name: Remove Prometheus
+      apt:
+        name: prometheus
+        state: absent
+
     - name: Install MariaDB Server
       apt:
         name: mariadb-server
@@ -34,6 +39,6 @@
 
     - name: Ensure MariaDB is Running
       service:
-        name: mariadb-server
+        name: myslq
         state: started
         enabled: true
