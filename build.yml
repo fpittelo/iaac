@@ -57,8 +57,22 @@
         state: started
         enabled: true
 
-# JENKINS FIRWALL ######################################
+# JENKINS FIREWALL ######################################
 
+    - name: Enable UFW And Deny All
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: Set Logging
+      ufw:
+        logging: 'on'
+
+    - name: Allow SSH
+      ufw:
+        rule: allow
+        name: OpenSSH
+        src: 192.168.10.0/24
     - name: Allow Jenkins tcp port 8080
       ufw:
         rule: allow

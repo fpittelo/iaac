@@ -21,20 +21,3 @@
 
     - name: install Members
       apt: name=members update_cache=yes
-
-# FIREWALL RULE
-
-    - name: Enable UFW And Deny All
-      ufw:
-        state: enabled
-        policy: deny
-
-    - name: Set Logging
-      ufw:
-        logging: 'on'
-
-    - name: Allow SSH
-      ufw:
-        rule: allow
-        name: OpenSSH
-        src: 192.168.10.0/24

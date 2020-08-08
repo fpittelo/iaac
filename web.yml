@@ -45,6 +45,20 @@
 
 # FIREWALL RULE #######################
 
+    - name: Enable UFW And Deny All
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: Set Logging
+      ufw:
+        logging: 'on'
+
+    - name: Allow SSH
+      ufw:
+        rule: allow
+        name: OpenSSH
+        src: 192.168.10.0/24
     - name: Allow all access to tcp port 80
       ufw:
         rule: allow
