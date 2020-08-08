@@ -64,3 +64,4 @@
         rule: allow
         port: '8080'
         proto: tcp
+        src: 192.168.10.0/24
