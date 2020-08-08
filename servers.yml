@@ -21,3 +21,14 @@
 
     - name: install Members
       apt: name=members update_cache=yes
+
+    - name: Firewall up & running
+      service: firewalld
+      enabled: true
+      state: started
+
+    - name: Firewall SSH Allow
+      firewalld: SSH
+      permanent: true
+      state: enabled
+      immediate: yes
