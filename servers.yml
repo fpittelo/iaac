@@ -25,6 +25,11 @@
         state=present
         createhome=yes
 
+    - name: Set up authorized keys for the adminfpi user
+      authorized_key: user=adminfpi state=present key="{{item}}"
+      with_file:
+        - /home/adminfpi/.ssh/id_rsa.pub
+
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
