@@ -22,16 +22,16 @@
     - name: install Members
       apt: name=members update_cache=yes
 
-    - name: Enable UFW and deny all
+    - name: Enable UFW And Deny All
       ufw:
         state: enabled
         policy: deny
 
-    - name: Set logging
+    - name: Set Logging
         ufw:
         logging: 'on'
 
-    - name: allow ssh
+    - name: Allow SSH
         ufw:
         rule: allow
         name: OpenSSH 
