@@ -16,8 +16,8 @@
       apt:
         name:
           - openjdk-8-jre
-        update_cache: true
         state: present
+        update_cache: true
 
     - name: Set Java Path
       set_fact:
