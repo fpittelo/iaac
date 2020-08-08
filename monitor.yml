@@ -23,7 +23,7 @@
     - name: Add ElasticSearch IP
       lineinfile:
         path: /etc/elasticsearch/elasticsearch.yml
-        line: network.host: 192.168.0.108
+        line: "network.host: 192.168.0.108"
         create: yes
 
     - name: Add ElasticSearch Port
