@@ -57,4 +57,10 @@
         state: started
         enabled: true
 
-########################################
+# JENKINS FIRWALL ######################################
+    
+    - name: Allow Jenkins tcp port 8080
+      ufw:
+        rule: allow
+        port: '8080'
+        proto: tcp
