@@ -14,7 +14,7 @@
         url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
         state: present
 
-    - name:
+    - name: Install ElasticSearch
       apt:
         name: elasticsearch
         state: present
