@@ -43,7 +43,7 @@
         state: started
         enabled: true
 
-# FIREWALL RULE
+# FIREWALL RULE #######################
 
     - name: Allow all access to tcp port 80
       ufw:
