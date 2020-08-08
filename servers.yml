@@ -22,7 +22,7 @@
     - name: install Members
       apt: name=members update_cache=yes
 
-    - name: Allow everything and enable UFW
+    - name: Enable UFW and deny all
       ufw:
         state: enabled
         policy: deny
