@@ -15,8 +15,8 @@
         state: present
 
     - name: Update Cache
-      apt: name={{ item }} update_cache=yes force_apt_get=yes
-      loop: [ 'aptitude' ]
+      apt:
+        update_cache=yes
 
     - name: Install ElasticSearch
       apt:
