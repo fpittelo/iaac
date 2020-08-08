@@ -6,7 +6,7 @@
     - name: Add ElasticSearch Source
       lineinfile:
         path: /etc/apt/sources.list
-        line: deb https://pkg.jenkins.io/debian-stable binary/
+        line: deb https://artifacts.elastic.co/packages/7.x/apt stable main
         create: yes
 
     - name: Install ElasticSearch Keys
