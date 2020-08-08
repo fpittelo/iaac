@@ -14,6 +14,11 @@
     - name: Install PostgreSQL
       apt: name=postgresql update_cache=yes
 
+    - name: Install PHP
+      apt:
+        name: php
+        state: present
+
     - name: Ensure Apache is Running
       service:
         name: apache2
