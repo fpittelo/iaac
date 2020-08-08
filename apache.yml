@@ -16,9 +16,9 @@
         name: postgresql
         state: absent
 
-    - name: Install Mysql
+    - name: Install MariaDB Server
       apt:
-        name: mysql
+        name: mariadb-server
         state: present
 
     - name: Install PHP
@@ -32,8 +32,8 @@
         state: started
         enabled: true
 
-    - name: Ensure Mysql is Running
+    - name: Ensure MariaDB is Running
       service:
-        name: mysql
+        name: mariadb-server
         state: started
         enabled: true
