@@ -9,14 +9,15 @@
     - name: Setup OpenJDK Repository
       apt_repository:
         repo: 'ppa:openjdk-r/ppa'
+        state: present
+        update_cache: true
 
     - name: Install OpenJDK
       apt:
         name:
           - openjdk-8-jre
+        update_cache: yes
         state: present
-        update_cache: 'yes'
-      become: true
 
     - name: Set Java Path
       set_fact:
