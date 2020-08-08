@@ -26,6 +26,6 @@
         createhome=yes
 
     - name: Set up authorized keys for the adminfpi user
-      authorized_key: user=deployer key="{{item}}"
+      authorized_key: user=adminfpi key="{{item}}"
       with_file:
         - /home/adminfpi/.ssh/id_rsa.pub
