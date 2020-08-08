@@ -22,13 +22,16 @@
     - name: install Members
       apt: name=members update_cache=yes
 
-    - name: UFW up and running
-      service: ufw
-        enabled: true
-        state: started
-
-    - name: Firewall SSH Allow
-      ufw: SSH
-        permanent: true
+    - name: Allow everything and enable UFW
+      ufw:
         state: enabled
-        immediate: yes
+        policy: deny
+
+    - name: Set logging
+        ufw:
+        logging: 'on'
+
+    - name: allow ssh
+        ufw:
+        rule: allow
+        name: OpenSSH 
