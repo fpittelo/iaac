@@ -8,3 +8,8 @@
         path: /etc/apt/sources.list
         line: deb https://pkg.jenkins.io/debian-stable binary/
         create: yes
+
+    - name: Install ElasticSearch Keys
+      apt_key:
+        url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        state: present
