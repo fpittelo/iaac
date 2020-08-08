@@ -4,12 +4,12 @@
   remote_user: adminfpi
   tasks:
 
-    - name: Make sure we have a 'wheel' group
+    - name: Wheel Group Control
       group:
         name: wheel
         state: present
 
-    - name: Allow 'wheel' group to have passwordless sudo
+    - name: Passwordless Sudo For Wheel Group
       lineinfile:
         dest: /etc/sudoers
         state: present
@@ -17,7 +17,7 @@
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
 
-    - name: Add sudoers users to wheel group
+    - name: Add User to Wheel Group
       user:
         name=adminfpi
         groups=wheel
@@ -25,26 +25,26 @@
         state=present
         createhome=yes
 
-    - name: Set up authorized keys for the adminfpi user
+    - name: Set up Keys for Adminfpi
       authorized_key: user=adminfpi state=present key="{{ item }}"
       with_file:
         - /home/adminfpi/.ssh/id_rsa.pub
 
-    - name: Install prerequisites
+    - name: Install Prerequisites
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
 
-    - name: install net-tools
+    - name: Install Net-Tools
       apt: name=net-tools update_cache=yes
 
     - name: Install SSH Server
       apt: name=openssh-server update_cache=yes
 
-    - name: ensure SSH Server is running
+    - name: SSH Server Control
       service:
         name: ssh
         state: started
         enabled: true
 
-    - name: install Members
+    - name: Install Members Utility
       apt: name=members update_cache=yes
