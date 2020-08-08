@@ -6,25 +6,22 @@
 
 # INSTALL JAVA #########################
 
-    - name: Install add-apt-repostory
-      become: yes
-      apt: name=software-properties-common
+  - name: Setup OpenJDK Repository
+      apt_repository:
+        repo: 'ppa:openjdk-r/ppa'
+      become: true
 
-    - name: Add Oracle Java Repository
-      become: yes
-      apt_repository: repo='ppa:webupd8team/java'
+    - name: Install OpenJDK
+      apt:
+        name:
+          - openjdk-8-jre
+        state: present
+        update_cache: 'yes'
+      become: true
 
-    - name: "Accept Java 8 License"
-      become: yes
-      debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
-
-    - name: Install Oracle Java 8
-      become: yes
-      apt: name={{ item }}
-      with_items:
-        - oracle-java8-installer
-        - ca-certificates
-        - oracle-java8-set-default
+    - name: Set Java Path
+      set_fact:
+        java_path: /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 # INSTALL ElasticSearch #####################################
 
