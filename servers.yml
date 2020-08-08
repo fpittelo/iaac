@@ -22,13 +22,13 @@
     - name: install Members
       apt: name=members update_cache=yes
 
-    - name: Firewall up and running
-      service: firewalld
+    - name: UFW up and running
+      service: ufw
         enabled: true
         state: started
 
     - name: Firewall SSH Allow
-      firewalld: SSH
+      ufw: SSH
         permanent: true
         state: enabled
         immediate: yes
