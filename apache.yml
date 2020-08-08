@@ -9,7 +9,10 @@
       loop: [ 'aptitude' ]
 
     - name: Install Apache
-      apt: name=apache2 update_cache=yes state=latest
+      apt: name=apache2 update_cache=yes
+
+    - name: Install PostgreSQL
+      apt: name=postgresql update_cache=yes
 
     - name: ensure apache is running
       service:
