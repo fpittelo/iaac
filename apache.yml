@@ -23,5 +23,5 @@
     - name: ensure Postgres Is Running
       service:
         name: postgresql
-        state: started
+        state: stopped
         enabled: false
