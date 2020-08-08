@@ -3,6 +3,12 @@
   become: yes
   remote_user: adminfpi
   tasks:
+    
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+    
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
