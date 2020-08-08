@@ -17,6 +17,14 @@
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
 
+    - name: Add sudoers users to wheel group
+      user:
+        name=adminfpi
+        groups=wheel
+        append=yes
+        state=present
+        createhome=yes
+
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes force_apt_get=yes
       loop: [ 'aptitude' ]
