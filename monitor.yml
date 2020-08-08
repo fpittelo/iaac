@@ -8,7 +8,7 @@
 
   - name: Setup OpenJDK Repository
       apt_repository:
-        repo: 'ppa:openjdk-r/ppa'
+      repo: 'ppa:openjdk-r/ppa'
       become: true
 
     - name: Install OpenJDK
