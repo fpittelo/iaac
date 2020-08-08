@@ -34,4 +34,4 @@
     - name: Allow SSH
       ufw:
         rule: allow
-        name: OpenSSH 
+        name: OpenSSH
