@@ -22,7 +22,7 @@
     - name: install Members
       apt: name=members update_cache=yes
 
-    - name: Firewall up & running
+    - name: Firewall up and running
       service: firewalld
       enabled: true
       state: started
