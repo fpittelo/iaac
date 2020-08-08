@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: monitor
   become: yes
   remote_user: adminfpi
 
