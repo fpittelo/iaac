@@ -19,3 +19,9 @@
         name:
           - elasticsearch
         state: present
+
+    - name: ensure ElasticSearch is running
+      service:
+        name: elasticsearch
+        state: started
+        enabled: true
