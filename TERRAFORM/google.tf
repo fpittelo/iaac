@@ -1,5 +1,6 @@
 //configure the Google Cloud Provider
 provider "google" {
+  credentials = file("IAAC-6eca265a8a86.json")
   project = "{{iaac-237416}}"
   region  = "europe-west6"
   zone    = "europe-west6-c"
