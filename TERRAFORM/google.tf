@@ -3,7 +3,6 @@ provider "google" {
   credentials = file("IAAC-96d39da1543f.json")
   project = "{{iaac-237416}}"
   region  = "europe-west6"
-  zone    = "europe-west6-c"
 }
 
 resource "google_compute_instance" "vm_instance" {
