@@ -1,3 +1,0 @@
-provder "Google Cloud" {
-
-}
