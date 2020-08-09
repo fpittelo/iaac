@@ -5,7 +5,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "iaac-instance"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -16,13 +16,13 @@ resource "google_compute_instance" "vm_instance" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network = "default"
+    network = "iaac"
     access_config {
     }
   }
 }
 
 resource "google_compute_network" "vpc_network" {
-  name                    = "terraform-network"
+  name                    = "iaac-network"
   auto_create_subnetworks = "true"
 }
