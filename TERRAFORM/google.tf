@@ -1,5 +1,5 @@
 provider "google" {
-  project = "{{IAAC}}"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = "{{iaac-237416}}"
+  region  = "europe-west6"
+  zone    = "europe-west6-c"
 }
