@@ -1,0 +1,11 @@
+{
+  "appId": "45b244ce-1d0e-4dbf-a962-549f395af6da",
+  "displayName": "azure-cli-2020-08-11-15-47-02",
+  "name": "http://azure-cli-2020-08-11-15-47-02",
+  "password": "829Qkkrp6oXEvQg56EnxxY2PioT~P_iKxc",
+  "tenant": "4c8896b7-52b2-4cb4-9533-1dc0c937e1ed"
+}
+
+###### TO TEST #####
+
+az login --service-principal -u 45b244ce-1d0e-4dbf-a962-549f395af6da -p 829Qkkrp6oXEvQg56EnxxY2PioT~P_iKxc --tenant 4c8896b7-52b2-4cb4-9533-1dc0c937e1ed
