@@ -3,7 +3,7 @@
   become: yes
   remote_user: adminfpi
 
-#### SECURITY COMPLIANCE ###########################################
+#### SECURITY COMPLIANCE ###################
 
     - name: Wheel Group Control
       group:
