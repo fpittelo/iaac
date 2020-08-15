@@ -80,7 +80,16 @@
         proto: tcp
         src: 192.168.10.0/24
 
-##### INSALL ANSIBLE ###################################
+##### INSTALL ANSIBLE ###################################
 
     - name: Install Ansible
       apt: name=ufw update_cache=yes
+
+    - name: Copy Ansible Hosts File
+      copy:
+        src: /etc/ansible/hosts
+        dest: /etc/ansible/hosts
+        owner: root
+        group: root
+        mode: '0644'
+        backup: yes
