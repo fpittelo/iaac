@@ -83,7 +83,7 @@
 ##### INSTALL ANSIBLE ###################################
 
     - name: Install Ansible
-      apt: name=ufw update_cache=yes
+      apt: name=ansible update_cache=yes
 
     - name: Copy Ansible Hosts File
       copy:
