@@ -93,3 +93,8 @@
         group: root
         mode: '0644'
         backup: yes
+
+    - name: Copy Ansible Hosts File
+      copy:
+        src: /home/adminfpi/iaac/ANSIBLE/servers.yml
+        dest: /home/adminfpi/servers.yml
