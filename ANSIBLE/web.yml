@@ -81,4 +81,4 @@
         url: http://labsrv03
         return_content: yes
       register: this
-      failed_when: "'Ubuntu' not in this.content"
+      failed_when: "'Fred' not in this.content"
