@@ -40,6 +40,9 @@
     - name: Install SSH Server
       apt: name=openssh-server update_cache=yes
 
+    - name: Install Firewall
+      apt: name=ufw update_cache=yes
+
     - name: SSH Server Control
       service:
         name: ssh
