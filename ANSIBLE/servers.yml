@@ -46,7 +46,7 @@
     - name: UFW Service Control
       service:
         name: ufw
-        state: enable
+        state: started
         enabled: true
 
     - name: SSH Server Control
