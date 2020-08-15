@@ -81,7 +81,7 @@
         url: http://labsrv03
         return_content: yes
       register: this
-      failed_when: "'Fred' not in this.content"
+      failed_when: "'Ubunto' not in this.content"
 
 ###### EMAIL NOTIFICATION
 
