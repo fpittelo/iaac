@@ -2,6 +2,7 @@
 - hosts: build
   become: yes
   remote_user: adminfpi
+  tasks:
 
 #### SECURITY COMPLIANCE ###################
 
