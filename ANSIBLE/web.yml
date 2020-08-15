@@ -76,9 +76,9 @@
 
 #### WEB PAGE VERIFICATION
 
-    - name:  Test Web Page
-      action: uri url=http://www.labsrv03 return_content=yes
-        register: webpage
-        fail:
-        msg: 'service is not happy'
-        when: "'Ubuntu' not in webpage.content"
+    - name: Check that a page returns a status 200 and fail if the word AWESOME is not in the page contents
+      uri:
+        url: http://labsrv03
+        return_content: yes
+      register: this
+      failed_when: "'Ubuntu' not in this.content"
