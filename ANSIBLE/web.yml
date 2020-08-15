@@ -94,4 +94,4 @@
         to: Fred <frederic.pitteloud@gmail.com>
         subject: Ansible Report For Servers Policy
         body: System {{ ansible_hostname }} has been successfully provisioned.
-      delegate_to: labsrv01
+      delegate_to: labsrv02
