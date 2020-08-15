@@ -4,34 +4,6 @@
   remote_user: adminfpi
   tasks:
 
-#### SECURITY COMPLIANCE ###################
-
-    - name: Group Control
-      group:
-        name: wheel
-        state: present
-
-    - name: Passwordless Sudo For Wheel Group
-      lineinfile:
-        dest: /etc/sudoers
-        state: present
-        regexp: '^%wheel'
-        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
-        validate: 'visudo -cf %s'
-
-    - name: Add User to Wheel Group
-      user:
-        name=adminfpi
-        groups=wheel
-        append=yes
-        state=present
-        createhome=yes
-
-    - name: Set up Keys for Adminfpi
-      authorized_key: user=adminfpi state=present key="{{ item }}"
-      with_file:
-        - /home/adminfpi/.ssh/id_rsa.pub
-
 # INSTALL JAVA #########################
 
   tasks:
