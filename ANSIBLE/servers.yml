@@ -41,6 +41,9 @@
     - name: Install Net-Tools
       apt: name=net-tools update_cache=yes
 
+    - name: Install Nmap
+      apt: name=nmap update_cache=yes
+
     - name: Install Members Utility
       apt: name=members update_cache=yes
 
@@ -51,6 +54,10 @@
 
     - name: Install Firewall
       apt: name=ufw update_cache=yes
+
+    - name: Set logging
+      ufw:
+        logging: 'on'
 
     - name: Allow SSH
       ufw:
