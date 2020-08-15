@@ -5,7 +5,7 @@
 
 #### SECURITY COMPLIANCE ###################
 
-    - name: Wheel Group Control
+    - name: Group Control
       group:
         name: wheel
         state: present
