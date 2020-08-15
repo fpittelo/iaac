@@ -73,3 +73,14 @@
         rule: allow
         port: '443'
         proto: tcp
+
+#### WEB PAGE VERIFICATION
+
+tasks:
+
+  - action: uri url=http://www.labsrv03 return_content=yes
+    register: webpage
+
+  - fail:
+      msg: 'service is not happy'
+    when: "'Ubuntu' not in webpage.content"
