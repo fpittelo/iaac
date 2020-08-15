@@ -113,6 +113,15 @@
     - name: Install Ansible
       apt: name=ansible update_cache=yes
 
+    - name: Install Ansible-Lint
+      apt: name=ansible-lint update_cache=yes
+
+    - name: Ansible Control
+      service:
+        name: ansible
+        state: started
+        enabled: true
+
     - name: Copy Ansible Hosts File
       copy:
         src: /etc/ansible/hosts
