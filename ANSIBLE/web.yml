@@ -4,22 +4,24 @@
   become: yes
   remote_user: adminfpi
   tasks:
-    - name: Install prerequisites
-      apt: name={{ item }} update_cache=yes force_apt_get=yes
-      loop: [ 'aptitude' ]
+#   - name: Install prerequisites
+#    apt: name={{ item }} update_cache=yes force_apt_get=yes
+#     loop: [ 'aptitude' ]
+
+#   - name: Remove PostgreSQL
+#     apt:
+#       name: postgresql
+#       state: absent
+
+#   - name: Remove Prometheus
+#     apt:
+#       name: prometheus
+#       state: absent
+
+#### INSTALL SERVER SERVICES ################################
 
     - name: Install Apache
       apt: name=apache2 update_cache=yes
-
-    - name: Remove PostgreSQL
-      apt:
-        name: postgresql
-        state: absent
-
-    - name: Remove Prometheus
-      apt:
-        name: prometheus
-        state: absent
 
     - name: Install MariaDB Server
       apt:
@@ -59,6 +61,7 @@
         rule: allow
         name: OpenSSH
         src: 192.168.10.0/24
+
     - name: Allow all access to tcp port 80
       ufw:
         rule: allow
