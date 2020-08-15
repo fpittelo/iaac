@@ -76,7 +76,7 @@
         enabled: true
 
 ###### EMAIL NOTIFICATION
-
+#
     - name: Sending an e-mail using Gmail SMTP servers
       mail:
         host: smtp.gmail.com
