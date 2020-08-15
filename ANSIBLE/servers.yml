@@ -43,11 +43,9 @@
     - name: Install Firewall
       apt: name=ufw update_cache=yes
 
-    - name: UFW Service Control
-      service:
-        name: ufw
-        state: started
-        enabled: true
+    - name: Enable UFW
+      ufw:
+        state: enabled
 
     - name: SSH Server Control
       service:
