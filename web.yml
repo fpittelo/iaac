@@ -77,10 +77,8 @@
 
     - name: Clone git repositories
       git:
-        repo: https://github.com/fpittelo/website"
-        dest: /var/www
-        force: yes
-      with_items: "{{ webserver_static_sites }}"
+        repo: 'https://github.com/fpittelo/website'
+        dest: /var/www/
 
 #### WEB PAGE VERIFICATION ##############################
 
