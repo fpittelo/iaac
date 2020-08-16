@@ -75,7 +75,7 @@
 
 #### DEPLOY WEBSITE FROM GITHUB #########################
 
-    - name: Clone git repositories
+    - name: Clone Git Website
       git:
         repo: 'https://github.com/fpittelo/website'
         dest: /var/www/
