@@ -77,7 +77,7 @@
 
     - name: Clone Git Website
       git:
-        repo: 'https://github.com/fpittelo/website'
+        repo: 'https://github.com/fpittelo/website.git'
         dest: /var/www/
         update: no
 
