@@ -83,12 +83,12 @@
 
 #### WEB PAGE VERIFICATION ##############################
 
-    - name: Check Page status 200 And Word Ubuntu Is In The Webpage
+    - name: Check Page status 200 And Word "Business!" Is In The Webpage
       uri:
         url: http://labsrv03
         return_content: yes
       register: this
-      failed_when: "'Ubuntu' not in this.content"
+      failed_when: "'Business!' not in this.content"
 
 ###### EMAIL NOTIFICATION
 
