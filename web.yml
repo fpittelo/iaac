@@ -75,7 +75,7 @@
 
 #### WEB PAGE VERIFICATION
 
-    - name: Check that a page returns a status 200 and fail if the word AWESOME is not in the page contents
+    - name: Check Page status 200 And Word Ubuntu Is In The Webpage
       uri:
         url: http://labsrv03
         return_content: yes
@@ -84,7 +84,7 @@
 
 ###### EMAIL NOTIFICATION
 
-    - name: Sending an e-mail using Gmail SMTP servers
+    - name: Sending E-Mail Report by Gmail SMTP Servers
       mail:
         host: smtp.gmail.com
         port: 587
