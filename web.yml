@@ -73,7 +73,16 @@
         port: '443'
         proto: tcp
 
-#### WEB PAGE VERIFICATION
+#### DEPLOY WEBSITE FROM GITHUB #########################
+
+    - name: Clone git repositories
+      git:
+        repo: https://github.com/fpittelo/website"
+        dest: /var/www
+        force: yes
+      with_items: "{{ webserver_static_sites }}"
+
+#### WEB PAGE VERIFICATION ##############################
 
     - name: Check Page status 200 And Word Ubuntu Is In The Webpage
       uri:
