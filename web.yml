@@ -79,6 +79,7 @@
       git:
         repo: 'https://github.com/fpittelo/website'
         dest: /var/www/
+        update: no
 
 #### WEB PAGE VERIFICATION ##############################
 
