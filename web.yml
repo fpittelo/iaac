@@ -90,16 +90,3 @@
         return_content: yes
       register: this
       failed_when: "'Business!' not in this.content"
-
-###### EMAIL NOTIFICATION
-
-    - name: Sending E-Mail Report by Gmail SMTP Servers
-      mail:
-        host: smtp.gmail.com
-        port: 587
-        username: frederic.pitteloud@gmail.com
-        password: kboaolwwglzhoyeq
-        to: Fred <frederic.pitteloud@gmail.com>
-        subject: Ansible Report For Servers Policy
-        body: System {{ ansible_hostname }} has been successfully provisioned.
-      delegate_to: labsrv02
