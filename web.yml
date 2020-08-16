@@ -80,6 +80,7 @@
         repo: 'https://github.com/fpittelo/website.git'
         dest: /var/www/
         update: no
+        version: master
 
 #### WEB PAGE VERIFICATION ##############################
 
