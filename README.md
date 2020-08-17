@@ -3,6 +3,8 @@ Infrastructure As A Code projects
 
 Testing a Devops Approach with Ansible: Deploy servers + workload on 4 local VM with Internet connection.
 
+  - OS Ubuntu 20.04 'Focal Fossa'
+
   - Local VM servers - Group: Servers    - OpenSSH + UFW Firewall + Net tools + Nmap + Nano
     - LABSRV01 - Group: Ansible_Build    - Ansible + Ansible-Lint + Jenkins
     - LABSRV02 - Group: Web Server QAL   - Apache + Maria DB + PHP
