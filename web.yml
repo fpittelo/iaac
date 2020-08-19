@@ -19,6 +19,9 @@
 
 #### INSTALL SERVER SERVICES ################################
 
+    - name: Install Git
+      apt: name=git update_cache=yes
+
     - name: Install Apache
       apt: name=apache2 update_cache=yes
 
