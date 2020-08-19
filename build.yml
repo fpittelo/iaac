@@ -100,13 +100,12 @@
       ufw:
         rule: allow
         name: OpenSSH
-        src: 192.168.10.0/24
+
     - name: Allow Jenkins tcp port 8080
       ufw:
         rule: allow
         port: '8080'
         proto: tcp
-        src: 192.168.10.0/24
 
 ##### INSTALL ANSIBLE ###################################
 
