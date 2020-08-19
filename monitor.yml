@@ -13,7 +13,7 @@
     - name: Install OpenJDK
       apt:
         name:
-          - openjdk-8-jre
+          - openjdk-8-jdk
         state: present
 
     - name: Set Java Path
