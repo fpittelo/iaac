@@ -34,9 +34,12 @@
 
 #### INSTALL APPS ###########################################
 
-    - name: Install Prerequisites
-      apt: name={{ item }} update_cache=yes force_apt_get=yes
-      loop: [ 'aptitude' ]
+ #  - name: Install Prerequisites
+ #    apt: name={{ item }} update_cache=yes force_apt_get=yes
+ #    loop: [ 'aptitude' ]
+
+    - name: Install Python
+      apt: name=net-tools update_cache=yes
 
     - name: Install Net-Tools
       apt: name=net-tools update_cache=yes
