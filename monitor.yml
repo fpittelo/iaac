@@ -4,9 +4,9 @@
   remote_user: adminfpi
   tasks:
 
-    - name: Install prerequisites
-      apt: name={{ item }} update_cache=yes force_apt_get=yes
-      loop: [ 'aptitude' ]
+#   - name: Install prerequisites
+#     apt: name={{ item }} update_cache=yes force_apt_get=yes
+#     loop: [ 'aptitude' ]
 
 # INSTALL JAVA #########################
 
