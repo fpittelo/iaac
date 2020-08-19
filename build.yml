@@ -99,7 +99,7 @@
     - name: Allow SSH
       ufw:
         rule: allow
-        name: OpenSSH
+        port: 22
 
     - name: Allow Jenkins tcp port 8080
       ufw:
