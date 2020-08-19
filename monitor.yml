@@ -135,11 +135,9 @@
       ufw:
         rule: allow
         name: OpenSSH
-        src: 192.168.10.0/24
 
     - name: Allow ElasticSearch tcp port 9200
       ufw:
         rule: allow
         port: '9200'
         proto: tcp
-        src: 192.168.10.0/24
