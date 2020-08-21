@@ -1,27 +1,14 @@
 # Example Playbook
-- name: Compute Engine Instance Examples
+- name: Google Cloud Create Instances
   hosts: localhost
   tasks:
-    - name: create multiple instances
-      # Basic provisioning example.  Create multiple Debian 8 instances in the
-      # us-central1-a Zone of n1-standard-1 machine type.
-      gce:
-        instance_names: labsrv05,labsrv06
-        zone: europe-west6-b
-        machine_type: e2-micro
-        image: debian-10
-        state: present
-        service_account_email: provision@iaac-237416.iam.gserviceaccount.com"
-        credentials_file: "iaac-237416-288184cdfda1.json"
-        project_id: "iaac-237416"
 
-        instance_names: labsrv07
-        zone: europe-west6-b
+    - name: create a instance
+      gcp_compute_instance:
+        name: labsrv05
         machine_type: e2-micro
-        image: debian-10
+        zone: europe-west6-b
+        project: iaac-237416
+        auth_kind: serviceaccount
+        service_account_file: "iaac-237416-288184cdfda1.json"
         state: present
-        service_account_email: "your-sa@your-project-name.iam.gserviceaccount.com"
-        credentials_file: "iaac-237416-288184cdfda1.json"
-        project_id: "iaac-237416"
-        disk_size: 20
-      register: gce
