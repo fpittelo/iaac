@@ -11,7 +11,7 @@
         machine_type: e2-micro
         image: debian-10
         state: present
-        service_account_email: ""provision@iaac-237416.iam.gserviceaccount.com""
+        service_account_email: provision@iaac-237416.iam.gserviceaccount.com"
         credentials_file: "iaac-237416-288184cdfda1.json"
         project_id: "iaac-237416"
       register: gce
@@ -23,6 +23,6 @@
       image: debian-10
       state: present
       service_account_email: "your-sa@your-project-name.iam.gserviceaccount.com"
-      credentials_file: "/path/to/your-key.json"
-      project_id: "your-project-name"
-      disk_size: 32
+      credentials_file: "iaac-237416-288184cdfda1.json"
+      project_id: "iaac-237416"
+      disk_size: 20
