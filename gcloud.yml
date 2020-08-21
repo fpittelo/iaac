@@ -1,0 +1,22 @@
+# Example Playbook
+- name: Compute Engine Instance Examples
+  hosts: localhost
+  vars:
+    service_account_email: "32609747277-compute@developer.gserviceaccount.com"
+    credentials_file: "iaac-key.json"
+    project_id: "iaac-237416"
+  tasks:
+    - name: create multiple instances
+      # Basic provisioning example.  Create multiple Debian 8 instances in the
+      # us-central1-a Zone of n1-standard-1 machine type.
+      gce:
+        instance_names: labsrv05,labsrv06
+        zone: europe-west6-b
+        machine_type: e2-micro
+        image: debian-10
+        state: present
+        service_account_email: "{{ service_account_email }}"
+        credentials_file: "{{ credentials_file }}"
+        project_id: "{{ project_id }}"
+        metadata : '{ "startup-script" : "apt-get update" }'
+      register: gce
