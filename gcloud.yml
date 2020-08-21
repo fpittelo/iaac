@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     service_account_email: "provision-service@iaac-237416.iam.gserviceaccount.com"
-    credentials_file: "/home/adminfpi/code/iaac-237416-2f7c5cd9b618.json"
+    credentials_file: "iaac-237416-2f7c5cd9b618.json"
     project_id: "iaac-237416"
   tasks:
     - name: create multiple instances
