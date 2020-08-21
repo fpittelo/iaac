@@ -1,10 +1,6 @@
 # Example Playbook
 - name: Compute Engine Instance Examples
   hosts: localhost
-  vars:
-    service_account_email: "provision@iaac-237416.iam.gserviceaccount.com"
-    credentials_file: "iaac-237416-288184cdfda1.json"
-    project_id: "iaac-237416"
   tasks:
     - name: create multiple instances
       # Basic provisioning example.  Create multiple Debian 8 instances in the
@@ -15,8 +11,18 @@
         machine_type: e2-micro
         image: debian-10
         state: present
-        service_account_email: "{{ service_account_email }}"
-        credentials_file: "{{ credentials_file }}"
-        project_id: "{{ project_id }}"
-        metadata : '{ "startup-script" : "apt-get update" }'
+        service_account_email: ""provision@iaac-237416.iam.gserviceaccount.com""
+        credentials_file: "iaac-237416-288184cdfda1.json"
+        project_id: "iaac-237416"
       register: gce
+
+      - gce:
+      instance_names: labsrv07
+      zone: europe-west6-b
+      machine_type: e2-micro
+      image: debian-10
+      state: present
+      service_account_email: "your-sa@your-project-name.iam.gserviceaccount.com"
+      credentials_file: "/path/to/your-key.json"
+      project_id: "your-project-name"
+      disk_size: 32
