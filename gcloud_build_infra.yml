@@ -1,0 +1,58 @@
+- name: Create a GCP instance
+  hosts: localhost
+  vars:
+     gcp_project: iaac-237416
+     gcp_cred_kind: provision
+     gcp_compute_zone: europe-west6-b
+     gcp_machine_type: e2-micro
+     gcp_source_image: debian-10-buster-v20200805
+  tasks:
+    - name: Create Disk From Debian Template Image
+      gcp_compute_disk:
+        name: disk-instance
+        size_gb: 10
+        source_image: "{{ gcp_source_image }}"
+        zone: "{{ gcp_compute_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        state: present
+      register: disk
+
+    - name: Create A  VPC Network
+      gcp_compute_network:
+        name: network-instance
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        state: present
+      register: network
+
+    - name: create an IPv4 public IP Address
+      gcp_compute_address:
+        name: address-instance
+        region: "{{ gcp_compute_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        state: present
+      register: address
+
+    - name: Create Debian Instance
+      gcp_compute_instance:
+        name: labsrv05
+        machine_type: "{{ gcp_machine_type }}"
+        disks:
+        - auto_delete: 'true'
+          boot: 'true'
+          source: "{{ disk }}"
+        network_interfaces:
+        - network: "{{ network }}"
+          access_configs:
+          - name: External NAT
+            nat_ip: "{{ address }}"
+            type: ONE_TO_ONE_NAT
+        zone: "{{ gcp_compute_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        state: present
+    - name: Show Debian Instance Details
+      debug:
+        msg: "The Debian instance is accessible at {{ address.address }}"
