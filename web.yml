@@ -132,12 +132,12 @@
 
 #### WEB PAGE VERIFICATION ##############################
 
-    - name: Check Page status 200 And Word "Zorglub" Is In The Webpage
+    - name: Check Page status 200 And Word "Rapid Solutions" Is In The Webpage
       uri:
         url: http://labsrv03
         return_content: yes
       register: this
-      failed_when: "Zorglub"
+      failed_when: "Rapid Solutions"
 
   handlers:
     - name: restart apache2
