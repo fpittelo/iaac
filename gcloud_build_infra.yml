@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
      gcp_project: iaac-237416
-     gcp_cred_kind: provision
+     gcp_cred_kind: serviceaccount
      gcp_compute_zone: europe-west6-b
      gcp_machine_type: e2-micro
      gcp_source_image: debian-10-buster-v20200805
