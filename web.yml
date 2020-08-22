@@ -137,7 +137,7 @@
         url: http://labsrv03
         return_content: yes
       register: this
-      failed_when: "Rapid Solutions"
+      failed_when: "'Rapid Solutions'"
 
   handlers:
     - name: restart apache2
