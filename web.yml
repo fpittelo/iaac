@@ -83,9 +83,9 @@
       notify:
         - restart apache2
 
-  handlers:
-    - name: restart apache2
-      service: name=apache2 state=restarted
+# handlers:
+#   - name: restart apache2
+#     service: name=apache2 state=restarted
 
     - name: Ensure Apache is Running
       service:
@@ -138,3 +138,7 @@
         return_content: yes
       register: this
       failed_when: "Zorglub"
+
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
