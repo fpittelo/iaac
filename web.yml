@@ -3,8 +3,8 @@
   become: yes
   remote_user: adminfpi
   vars:
-    http_port:80
-    domain:fpittelo.ch
+    http_port: 80
+    domain: fpittelo.ch
   tasks:
 #   - name: Install prerequisites
 #    apt: name={{ item }} update_cache=yes force_apt_get=yes
