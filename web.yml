@@ -71,6 +71,11 @@
     - name: Create Virtual Host File
       template: src=virtualhost.conf dest=/etc/apache2/sites-available/{{ domain }}.conf
 
+    - name: Stop Default Apache Site
+      command: a2dissite 000-default.conf
+      notify:
+        - restart apache2
+
     - name: Enable Virtual Host {{ domain }}
       command: a2ensite {{ domain }}
       args:
