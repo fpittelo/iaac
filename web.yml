@@ -30,6 +30,11 @@
         name: php
         state: present
 
+    - name: Install Lynx
+      apt:
+        name: lynx
+        state: present
+
 #### INSTALL MARRI DB SERVER ################
 
     - name: Install MariaDB Server
