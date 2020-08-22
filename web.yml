@@ -134,7 +134,7 @@
 
     - name: Check Page status 200 And Word "Solutions" Is In The Webpage
       uri:
-        url: http://labsrv03
+        url: http://{{ ansible_host }}:{{ http_port }}
         return_content: yes
       register: this
       failed_when: "Solutions"
