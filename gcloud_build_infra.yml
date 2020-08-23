@@ -1,11 +1,7 @@
 
 - name: Set GCLOUD Environment Varialbles
   hosts: labsrv01
-  garther_facts: no
-
-  vars:
-  
-    account_file_dir: '/home/adminfpi/secure' 
+  garther_facts: no 
 
   Tasks:
 
@@ -30,7 +26,7 @@
     - name: Set GCP_SERVICE_ACCOUNT_FILE variable
       shell: "GCP_SERVICE_ACCOUNT_FILE"
       environment:
-        GCP_SERVICE_ACCOUNT_FILE: "{{ account_file_dir }}"iaac-237416-1c777c9c8e68.json
+        GCP_SERVICE_ACCOUNT_FILE: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
       register: GCP_SERVICE_ACCOUNT_FILE
 
     - debug:
