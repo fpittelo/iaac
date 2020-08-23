@@ -5,6 +5,8 @@
   remote_user: adminfpi
   hosts: labsrv01
 
+###########################################################
+
   Tasks:
 
     - name: Set GCP_AUTH_KIND variable
@@ -38,15 +40,15 @@
 
   tasks:
 
-  - name: Create a GCP instance
-  hosts: localhost
-  vars:
-     gcp_project: iaac-237416
-     gcp_cred_kind: serviceaccount
-     gcp_compute_zone: europe-west6-b
-     gcp_machine_type: e2-micro
-     gcp_source_image: debian-10-buster-v20200805
-     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
+    - name: Create a GCP instance
+    hosts: localhost
+    vars:
+      gcp_project: iaac-237416
+      gcp_cred_kind: serviceaccount
+      gcp_compute_zone: europe-west6-b
+      gcp_machine_type: e2-micro
+      gcp_source_image: debian-10-buster-v20200805
+      gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
     
     - name: Create A  VPC Network
       gcp_compute_network:
