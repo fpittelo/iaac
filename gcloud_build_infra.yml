@@ -46,7 +46,7 @@
       var: GCP_SERVICE_ACCOUNT_FILE.stdout
 
 #### CREATE VPC NETWOKR #################################################
-    
+
     - name: Create A  VPC Network
       gcp_compute_network:
         name: network-instance
