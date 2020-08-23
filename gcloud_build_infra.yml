@@ -38,8 +38,6 @@
 
 ##########################################################
 
-  tasks:
-
     - name: Create a GCP instance
     hosts: localhost
     vars:
