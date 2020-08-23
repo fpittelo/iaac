@@ -15,7 +15,7 @@
 
 ###########################################################
 
-  Tasks:
+Tasks:
 
     - name: Set GCP_AUTH_KIND variable
       shell: "echo $GCP_AUTH_KIND"
