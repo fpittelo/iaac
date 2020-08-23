@@ -3,7 +3,7 @@
 - hosts: servers
   become: yes
   remote_user: adminfpi
-  hosts: labsrv01
+  hosts: build
       vars:
       gcp_project: iaac-237416
       gcp_cred_kind: serviceaccount
