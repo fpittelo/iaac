@@ -1,5 +1,4 @@
 
----
 - name: Create VPC Network
   hosts: build
   become: yes
