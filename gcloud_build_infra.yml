@@ -1,7 +1,6 @@
 
 - name: Set GCLOUD Environment Varialbles
   hosts: labsrv01
-  garther_facts: no 
 
   Tasks:
 
