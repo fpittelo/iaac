@@ -1,18 +1,18 @@
 
 ---
-- hosts: servers
+- name: Create VPC Network
+  hosts: build
   become: yes
   remote_user: adminfpi
-  hosts: build
-      vars:
-      gcp_project: iaac-237416
-      gcp_cred_kind: serviceaccount
-      gcp_compute_zone: europe-west6-b
-      gcp_machine_type: e2-micro
-      gcp_source_image: debian-10-buster-v20200805
-      gcp_auth_kin: serviceaccount
-      gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
-      gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
+  vars:
+    gcp_project: iaac-237416
+    gcp_cred_kind: serviceaccount
+    gcp_compute_zone: europe-west6-b
+    gcp_machine_type: e2-micro
+    gcp_source_image: debian-10-buster-v20200805
+    gcp_auth_kin: serviceaccount
+    gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
+    gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
 
 ###########################################################
 
