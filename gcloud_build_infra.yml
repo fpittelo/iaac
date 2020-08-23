@@ -46,11 +46,13 @@
      gcp_compute_zone: europe-west6-b
      gcp_machine_type: e2-micro
      gcp_source_image: debian-10-buster-v20200805
-
+     gcp_service_account_file: "{{ GCP_SERVICE_ACCOUNT_FILE }}"
+    
     - name: Create A  VPC Network
       gcp_compute_network:
         name: network-instance
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
         state: present
       register: network
