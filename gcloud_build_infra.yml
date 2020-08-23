@@ -1,5 +1,8 @@
 
-- name: Set GCLOUD Environment Varialbles
+---
+- hosts: servers
+  become: yes
+  remote_user: adminfpi
   hosts: labsrv01
 
   Tasks:
@@ -31,8 +34,11 @@
     - debug:
       var: GCP_SERVICE_ACCOUNT_FILE.stdout
 
+##########################################################
 
-- name: Create a GCP instance
+  tasks:
+
+  - name: Create a GCP instance
   hosts: localhost
   vars:
      gcp_project: iaac-237416
@@ -40,8 +46,6 @@
      gcp_compute_zone: europe-west6-b
      gcp_machine_type: e2-micro
      gcp_source_image: debian-10-buster-v20200805
-
-  tasks:
 
     - name: Create A  VPC Network
       gcp_compute_network:
