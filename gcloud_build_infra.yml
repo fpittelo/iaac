@@ -13,38 +13,7 @@
     gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
 
-###########################################################
-
-Tasks:
-
-    - name: Set GCP_AUTH_KIND variable
-      shell: "echo $GCP_AUTH_KIND"
-      environment:
-        GCP_AUTH_KIND: serviceaccount
-      register: GCP_AUTH_KIND
-
-    - debug:
-      var: GCP_AUTH_KIND.stdout
-
-    - name: Set GCP_SERVICE_ACCOUNT_EMAIL variable
-      shell: "echo $GCP_SERVICE_ACCOUNT_EMAIL"
-      environment:
-        GCP_SERVICE_ACCOUNT_EMAIL: provision@iaac-237416.iam.gserviceaccount.com
-      register: GCP_SERVICE_ACCOUNT_EMAIL
-
-    - debug:
-      var: GCP_SERVICE_ACCOUNT_EMAIL.stdout
-
-    - name: Set GCP_SERVICE_ACCOUNT_FILE variable
-      shell: "GCP_SERVICE_ACCOUNT_FILE"
-      environment:
-        GCP_SERVICE_ACCOUNT_FILE: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
-      register: GCP_SERVICE_ACCOUNT_FILE
-
-    - debug:
-      var: GCP_SERVICE_ACCOUNT_FILE.stdout
-
-#### CREATE VPC NETWOKR #################################################
+  Tasks:
 
     - name: Create A  VPC Network
       gcp_compute_network:
