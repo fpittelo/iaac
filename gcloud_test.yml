@@ -27,7 +27,7 @@
          scopes:
            - https://www.googleapis.com/auth/compute
          state: present
-     register: disk
+      register: disk
 
    - name: Create A Network
       gcp_compute_network:
@@ -49,7 +49,7 @@
          scopes:
            - https://www.googleapis.com/auth/compute
          state: present
-     register: address
+       register: address
 
     - name: Create An Instance
       gcp_compute_instance:
