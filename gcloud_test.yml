@@ -10,7 +10,8 @@
     gcp_auth_kind: serviceaccount
     gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
-    gcp_zone: europe-west6-b
+    gcp_zone: "europe-west6-b"
+    gcp_region: "europe-west"
 
   tasks:
    - name: create a disk
@@ -21,7 +22,7 @@
          gcp_zone: "{{ gcp_zone }}"
          gcp_project: "{{ gcp_project }}"
          gcp_auth_kind: "{{ gcp_cred_kind }}"
-         gcp_service_account_file: "{{ gcp_cred_file }}"
+         gcp_service_account_file: "{{ gcp_service_account_file }}"
          scopes:
            - https://www.googleapis.com/auth/compute
          state: present
@@ -31,7 +32,7 @@
          name: 'iaac-network'
          gcp_project: "{{ gcp_project }}"
          gcp_auth_kind: "{{ gcp_cred_kind }}"
-         gcp_service_account_file: "{{ gcp_cred_file }}"
+         gcp_service_account_file: "{{ gcp_service_account_file }}"
          scopes:
            - https://www.googleapis.com/auth/compute
          state: present
