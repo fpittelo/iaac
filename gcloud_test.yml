@@ -48,8 +48,8 @@
         service_account_file: "{{ gcp_service_account_file }}"
         scopes:
           - https://www.googleapis.com/auth/compute
-         state: present
-       register: address
+        state: present
+      register: address
 
     - name: Create An Instance
       gcp_compute_instance:
