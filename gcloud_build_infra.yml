@@ -5,7 +5,7 @@
 
   vars:
   
-    account_file_dir: /home/adminfpi/secure 
+    account_file_dir: '/home/adminfpi/secure' 
 
   Tasks:
 
