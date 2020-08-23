@@ -6,7 +6,7 @@
     gcp_cred_kind: serviceaccount
     gcp_compute_zone: europe-west6-b
     gcp_machine_type: e2-micro
-    gcp_source_image: debian-10-buster-v20200805
+    gcp_source_image: "projects/debian-cloud/global/licenses/debian-10-buster"
     gcp_auth_kind: serviceaccount
     gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
@@ -20,7 +20,7 @@
       gcp_compute_disk:
         name: 'iaac-disk-instance'
         size_gb: 10
-        source_image: 'projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts'
+        source_image: "{{ gcp_source_image }}"
         zone: "{{ gcp_zone }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
