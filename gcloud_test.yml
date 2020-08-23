@@ -11,7 +11,7 @@
     gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-1c777c9c8e68.json
     gcp_zone: "europe-west6-b"
-    gcp_region: "europe-west"
+    gcp_region: "europe-west6"
 
   tasks:
 
