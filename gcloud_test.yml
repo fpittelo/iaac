@@ -39,7 +39,7 @@
         scopes:
           - https://www.googleapis.com/auth/compute
         state: present
-    
+
     - name: Create An Address
       gcp_compute_address:
         name: 'iaac-labsrv05-address'
