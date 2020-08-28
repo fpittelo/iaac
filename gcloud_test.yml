@@ -60,7 +60,7 @@
         disks:
           - auto_delete: true
             boot: true
-            source: "{{ disk }}"
+            source: nic01
         network_interfaces:
             - network: "{{ network.selfLink }}"
               access_configs:
