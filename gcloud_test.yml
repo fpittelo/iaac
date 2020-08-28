@@ -60,9 +60,9 @@
         disks:
           - auto_delete: true
             boot: true
-            source: nic01
+            source: "{{ disk }}"
         network_interfaces:
-            - network: "{{ network.selfLink }}"
+            - network: nic01
               access_configs:
                 - name: 'External NAT'
                   nat_ip: "{{ address }}"
