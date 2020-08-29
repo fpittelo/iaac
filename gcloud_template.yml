@@ -64,8 +64,8 @@
           - name: External NAT
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
-        zone: us-central1-a
-        project: test_project
-        auth_kind: serviceaccount
+        zone: "{{ gcp_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_auth_kind }}"
         service_account_file: "{{ gcp_service_account_file }}"
         state: present
