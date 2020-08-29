@@ -63,7 +63,8 @@
       gcp_compute_instance:
         name: labsrv10
         machine_type: "{{ gcp_machine_type }}"
-        metadata-from-file:
+        metadata:
+          from_file:
           startup-script:install-python.sh
         disks:
         - auto_delete: 'true'
