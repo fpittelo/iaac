@@ -56,8 +56,6 @@
         - auto_delete: 'true'
           boot: 'true'
           source: "{{ disk }}"
-        labels:
-          environment: production
         network_interfaces:
         - network: "{{ network }}"
           access_configs:
