@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: common
   become: yes
   remote_user: adminfpi
   tasks:
