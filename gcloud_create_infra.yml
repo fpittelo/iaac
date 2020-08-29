@@ -63,6 +63,8 @@
       gcp_compute_instance:
         name: labsrv10
         machine_type: "{{ gcp_machine_type }}"
+        metadata:
+          startup-script:install-python.sh
         disks:
         - auto_delete: 'true'
           boot: 'true'
@@ -73,8 +75,6 @@
           - name: External NAT
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
-        metadata:
-          startup-script:install-python.sh
         zone: "{{ gcp_zone }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_auth_kind }}"
