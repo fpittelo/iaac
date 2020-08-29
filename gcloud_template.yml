@@ -12,7 +12,7 @@
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-079a839e9e0c.json
     gcp_zone: 'europe-west6-b'
     gcp_region: 'europe-west6'
-    network: 'iaac-network'
+    network: 'default'
     templates: 'labsrv01-template-2'
 
   tasks:
