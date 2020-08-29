@@ -13,6 +13,7 @@
     gcp_zone: 'europe-west6-b'
     gcp_region: 'europe-west6'
     network: 'iaac-network'
+    network_subnet_name: 'iaac-lab subnet'
     templates: 'labsrv01-template-2'
 
   tasks:
@@ -29,14 +30,35 @@
         state: present
       register: disk
 
-    - name: Create Network
+#   - name: Create Network
+#     gcp_compute_network:
+#       name: "{{ network }}"
+#       project: "{{ gcp_project }}"
+#       auth_kind: "{{ gcp_cred_kind }}"
+#       service_account_file: "{{ gcp_service_account_file }}"
+#       state: present
+#     register: network
+
+    - name: create a network
       gcp_compute_network:
         name: "{{ network }}"
+        auto_create_subnetworks: 'true'
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
         service_account_file: "{{ gcp_service_account_file }}"
         state: present
       register: network
+
+    - name: create a subnetwork
+      gcp_compute_subnetwork:
+        name: "{{ network_subnet_name }}"
+        region: "{{ gcp_region }}"
+        network: "{{ network }}"
+        ip_cidr_range: 10.172.10.0/24
+        project: "{{ gcp_project }}"
+        auth_kind: serviceaccount
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
 
     - name: Create Address
       gcp_compute_address:
