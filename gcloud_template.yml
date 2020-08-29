@@ -15,8 +15,8 @@
     network: 'iaac-network'
     templates: 'labsrv01-template-2'
 
-  Tasks:
-      -name: Create VM From template
+  tasks:
+    -name: Create VM From template
       gcp_compute_instance:
         state: present
         name: labsrv05
