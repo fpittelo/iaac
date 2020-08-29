@@ -73,6 +73,8 @@
           - name: External NAT
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
+        metadata:
+          startup-script:install-python.sh
         zone: "{{ gcp_zone }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_auth_kind }}"
