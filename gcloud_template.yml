@@ -16,16 +16,56 @@
     templates: 'labsrv01-template-2'
 
   tasks:
-    -name: Create VM From template
-      gcp_compute_instance:
-        state: present
+
+    - name: create a disk
+      gcp_compute_disk:
         name: labsrv05
-        gcp_source_instance_template: "{{ templates }}"
+        size_gb: 10
+        source_image: "{{ gcp_source_image }}"
         zone: "{{ gcp_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
+      register: disk
+
+    - name: create a network
+      gcp_compute_network:
+        name: "{{ network }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
+      register: network
+
+    - name: create a address
+      gcp_compute_address:
+        name: labsrv05
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
         service_account_file: "{{ gcp_service_account_file }}"
-        scopes:
-          - https://www.googleapis.com/auth/compute
-      register: instance
+        state: present
+      register: address
+
+    - name: create a instance
+      gcp_compute_instance:
+        name: labsrv05
+        machine_type: "{{ gcp_machine_type }}"
+        disks:
+        - auto_delete: 'true'
+          boot: 'true'
+          source: "{{ disk }}"
+      labels:
+        environment: production
+      network_interfaces:
+      - network: "{{ network }}"
+        access_configs:
+        - name: External NAT
+          nat_ip: "{{ address }}"
+          type: ONE_TO_ONE_NAT
+      zone: us-central1-a
+      project: test_project
+      auth_kind: serviceaccount
+      service_account_file: "{{ gcp_service_account_file }}"
+      state: present
