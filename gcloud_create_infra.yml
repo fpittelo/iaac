@@ -80,8 +80,6 @@
 
 ### CREAT LABSRV11 ##############################################
 
-  tasks:
-
     - name: Create Disk
       gcp_compute_disk:
         name: labsrv11
@@ -126,8 +124,6 @@
 
 ### CREAT LABSRV12 ##############################################
 
-  tasks:
-
     - name: Create Disk
       gcp_compute_disk:
         name: labsrv12
@@ -171,8 +167,6 @@
         state: present
 
 ### CREAT LABSRV13 ##############################################
-
-  tasks:
 
     - name: Create Disk
       gcp_compute_disk:
