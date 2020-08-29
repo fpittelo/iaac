@@ -56,16 +56,16 @@
         - auto_delete: 'true'
           boot: 'true'
           source: "{{ disk }}"
-      labels:
-        environment: production
-      network_interfaces:
-      - network: "{{ network }}"
-        access_configs:
-        - name: External NAT
-          nat_ip: "{{ address }}"
-          type: ONE_TO_ONE_NAT
-      zone: us-central1-a
-      project: test_project
-      auth_kind: serviceaccount
-      service_account_file: "{{ gcp_service_account_file }}"
-      state: present
+        labels:
+          environment: production
+        network_interfaces:
+        - network: "{{ network }}"
+          access_configs:
+          - name: External NAT
+            nat_ip: "{{ address }}"
+            type: ONE_TO_ONE_NAT
+        zone: us-central1-a
+        project: test_project
+        auth_kind: serviceaccount
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
