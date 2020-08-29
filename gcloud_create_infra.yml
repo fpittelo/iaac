@@ -1,6 +1,6 @@
 - name: Create Instance
   hosts: localhost
-  gather_facts: no
+  gather_facts: yes
   vars:
     gcp_project: iaac-237416
     gcp_cred_kind: serviceaccount
