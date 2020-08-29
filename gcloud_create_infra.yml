@@ -30,14 +30,14 @@
         state: present
       register: disk
 
-#   - name: Create VPN Network
-#     gcp_compute_network:
-#       name: "{{ network }}"
-#       project: "{{ gcp_project }}"
-#       auth_kind: "{{ gcp_cred_kind }}"
-#       service_account_file: "{{ gcp_service_account_file }}"
-#       state: present
-#     register: network
+    - name: Create VPN Network
+      gcp_compute_network:
+        name: "{{ network }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
+      register: network
 
 #   - name: create VPC Network
 #     gcp_compute_network:
