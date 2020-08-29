@@ -13,6 +13,7 @@
     gcp_zone: 'europe-west6-b'
     gcp_region: 'europe-west6'
     network: 'iaac-network'
+    templates: 'labsrv01-template-2'
 
   tasks:
 

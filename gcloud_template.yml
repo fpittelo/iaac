@@ -1,0 +1,31 @@
+- name: Create an instance
+  hosts: localhost
+  gather_facts: no
+  vars:
+    gcp_project: iaac-237416
+    gcp_cred_kind: serviceaccount
+    gcp_compute_zone: europe-west6-b
+    gcp_machine_type: e2-micro
+    gcp_source_image: "projects/debian-cloud/global/images/debian-10-buster-v20200805"
+    gcp_auth_kind: serviceaccount
+    gcp_service_account_email: provision@iaac-237416.iam.gserviceaccount.com
+    gcp_service_account_file: /home/adminfpi/secure/iaac-237416-079a839e9e0c.json
+    gcp_zone: 'europe-west6-b'
+    gcp_region: 'europe-west6'
+    network: 'iaac-network'
+    templates: 'labsrv01-template-2'
+
+  Tasks:
+      -name: Create VM From template
+      gcp_compute_instance:
+        state: present
+        name: labsrv05
+        gcp_source_instance_template: "{{ templates }}"
+        zone: "{{ gcp_zone }}"
+        region: "{{ gcp_region }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        scopes:
+          - https://www.googleapis.com/auth/compute
+      register: instance
