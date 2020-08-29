@@ -2,6 +2,7 @@
 - hosts: common
   become: yes
   remote_user: adminfpi
+  gather_facts: no
   tasks:
 
 #### SECURITY COMPLIANCE ###########################################
