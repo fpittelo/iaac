@@ -1,4 +1,4 @@
-- name: Create an instance
+- name: Create Instance
   hosts: localhost
   gather_facts: no
   vars:
@@ -17,7 +17,7 @@
 
   tasks:
 
-    - name: create a disk
+    - name: Create Disk
       gcp_compute_disk:
         name: labsrv05
         size_gb: 10
@@ -29,7 +29,7 @@
         state: present
       register: disk
 
-    - name: create a network
+    - name: Create Network
       gcp_compute_network:
         name: "{{ network }}"
         project: "{{ gcp_project }}"
@@ -38,7 +38,7 @@
         state: present
       register: network
 
-    - name: create a address
+    - name: Create Address
       gcp_compute_address:
         name: labsrv05
         region: "{{ gcp_region }}"
@@ -48,7 +48,7 @@
         state: present
       register: address
 
-    - name: create a instance
+    - name: Create Instance
       gcp_compute_instance:
         name: labsrv05
         machine_type: "{{ gcp_machine_type }}"
