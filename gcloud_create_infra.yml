@@ -43,7 +43,7 @@
       gcp_compute_address:
         name: labsrv02
         address_type: INTERNAL
-        address: 10.172.0.14
+        address: 10.172.0.36
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
