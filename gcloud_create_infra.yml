@@ -68,7 +68,7 @@
         machine_type: "{{ gcp_machine_type }}"
         metadata:
           from_file: install_python.sh
-          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
 #         value: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
         disks:
         - auto_delete: 'true'
@@ -117,7 +117,7 @@
         machine_type: "{{ gcp_machine_type }}"
         metadata:
           from_file: install_python.sh
-          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
         disks:
         - auto_delete: 'true'
           boot: 'true'
