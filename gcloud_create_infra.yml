@@ -18,7 +18,7 @@
 
 #### CREAT LABSRV10 ##############################################
 
-    - name: Create Disk
+    - name: Create Disk labsrv10
       gcp_compute_disk:
         name: labsrv10
         size_gb: 10
@@ -39,7 +39,7 @@
         state: present
       register: network
 
-    - name: Create Address
+    - name: Create Address labsrv10
       gcp_compute_address:
         name: labsrv10
         address_type: INTERNAL
@@ -51,7 +51,7 @@
         state: present
       register: address
 
-    - name: Create Instance
+    - name: Create Instance labsrv10
       gcp_compute_instance:
         name: labsrv10
         machine_type: "{{ gcp_machine_type }}"
@@ -77,7 +77,7 @@
 
 ### CREAT LABSRV11 ##############################################
 
-    - name: Create Disk
+    - name: Create Disk labsrv11
       gcp_compute_disk:
         name: labsrv11
         size_gb: 10
@@ -101,7 +101,7 @@
         state: present
       register: address
 
-    - name: Create Instance
+    - name: Create Instance labsrv11
       gcp_compute_instance:
         name: labsrv11
         machine_type: "{{ gcp_machine_type }}"
@@ -127,7 +127,7 @@
 
 ### CREAT LABSRV12 ##############################################
 
-    - name: Create Disk
+    - name: Create Disk labsrv12
       gcp_compute_disk:
         name: labsrv12
         size_gb: 10
@@ -151,7 +151,7 @@
         state: present
       register: address
 
-    - name: Create Instance
+    - name: Create Instance labsrv12
       gcp_compute_instance:
         name: labsrv12
         machine_type: "{{ gcp_machine_type }}"
@@ -177,7 +177,7 @@
 
 ### CREAT LABSRV13 ##############################################
 
-    - name: Create Disk
+    - name: Create Disk labsrv13
       gcp_compute_disk:
         name: labsrv13
         size_gb: 10
@@ -201,7 +201,7 @@
         state: present
       register: address
 
-    - name: Create Instance
+    - name: Create Instance labsrv13
       gcp_compute_instance:
         name: labsrv13
         machine_type: "{{ gcp_machine_type }}"
@@ -227,7 +227,7 @@
 
 ### CREAT LABSRV02 ##############################################
 
-    - name: Create Disk
+    - name: Create Disk labsrv02
       gcp_compute_disk:
         name: labsrv02
         size_gb: 10
@@ -251,7 +251,7 @@
         state: present
       register: address
 
-    - name: Create Instance
+    - name: Create Instance labsrv02
       gcp_compute_instance:
         name: labsrv02
         machine_type: "{{ gcp_machine_type }}"
