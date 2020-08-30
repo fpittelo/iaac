@@ -224,3 +224,53 @@
         auth_kind: "{{ gcp_auth_kind }}"
         service_account_file: "{{ gcp_service_account_file }}"
         state: present
+
+### CREAT LABSRV02 ##############################################
+
+    - name: Create Disk
+      gcp_compute_disk:
+        name: labsrv02
+        size_gb: 10
+        source_image: "{{ gcp_source_image }}"
+        zone: "{{ gcp_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
+      register: disk
+
+    - name: Create Address
+      gcp_compute_address:
+        name: labsrv02
+        address_type: INTERNAL
+        address: 10.172.0.14
+        region: "{{ gcp_region }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_cred_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
+      register: address
+
+    - name: Create Instance
+      gcp_compute_instance:
+        name: labsrv02
+        machine_type: "{{ gcp_machine_type }}"
+        metadata:
+          from_file: install_python.sh
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
+        disks:
+        - auto_delete: 'true'
+          boot: 'true'
+          source: "{{ disk }}"
+        network_interfaces:
+        - network: "{{ network }}"
+          access_configs:
+          - name: External NAT
+            nat_ip: "{{ address }}"
+            type: ONE_TO_ONE_NAT
+          network_ip: 10.172.0.14
+        zone: "{{ gcp_zone }}"
+        project: "{{ gcp_project }}"
+        auth_kind: "{{ gcp_auth_kind }}"
+        service_account_file: "{{ gcp_service_account_file }}"
+        state: present
