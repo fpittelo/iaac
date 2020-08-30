@@ -53,7 +53,7 @@
       gcp_compute_address:
         name: labsrv10
         address_type: internal
-        subnetwork: default
+#       subnetwork: default
         address: 10.172.0.36
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
