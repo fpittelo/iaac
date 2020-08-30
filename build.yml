@@ -1,5 +1,5 @@
 ---
-- hosts: build
+- hosts: build, tbuild
   become: yes
   remote_user: adminfpi
   tasks:

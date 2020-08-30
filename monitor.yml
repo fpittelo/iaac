@@ -1,5 +1,5 @@
 ---
-- hosts: monitor
+- hosts: monitor, tmonitor
   become: yes
   remote_user: adminfpi
   tasks:
