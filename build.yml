@@ -29,27 +29,28 @@
 
     - name: Set up Keys for Adminfpi
       authorized_key: user=adminfpi state=present key="{{ item }}"
+      no_log: true
       with_file:
         - /home/adminfpi/.ssh/id_rsa.pub
 
 # INSTALL JAVA #########################
 
-    - name: Setup OpenJDK Repository
-      apt_repository:
-        repo: 'ppa:openjdk-r/ppa'
-      become: true
+#   - name: Setup OpenJDK Repository
+#     apt_repository:
+#       repo: 'ppa:openjdk-r/ppa'
+#     become: true
 
-    - name: Install OpenJDK
-      apt:
-        name:
-          - openjdk-8-jre
-        state: present
-        update_cache: 'yes'
-      become: true
+#   - name: Install OpenJDK
+#     apt:
+#       name:
+#         - openjdk-8-jre
+#       state: present
+#       update_cache: 'yes'
+#     become: true
 
-    - name: Set Java Path
-      set_fact:
-        java_path: /usr/lib/jvm/java-1.8.0-openjdk-amd64
+#   - name: Set Java Path
+#     set_fact:
+#       java_path: /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 # INSTALL JENKINS ######################
 
