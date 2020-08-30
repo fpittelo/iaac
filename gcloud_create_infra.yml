@@ -76,9 +76,9 @@
           source: "{{ disk }}"
         network_interfaces:
         - network: "{{ network }}"
-          private_network_ip: "10.172.0.36"
           access_configs:
           - name: External NAT
+            private_network_ip: "10.172.0.36"
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
