@@ -52,7 +52,7 @@
     - name: Create Address
       gcp_compute_address:
         name: labsrv10
-        address_type: internal
+        address_type: INTERNAL
 #       subnetwork: default
         address: 10.172.0.36
         region: "{{ gcp_region }}"
