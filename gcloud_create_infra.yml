@@ -30,7 +30,7 @@
         state: present
       register: disk
 
-    - name: Create VPN Network
+    - name: Create VPC Network
       gcp_compute_network:
         name: "{{ network }}"
         project: "{{ gcp_project }}"
