@@ -78,6 +78,7 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
+            networkIP: 10.172.0.36
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -122,6 +123,7 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
+            networkIP: 10.172.0.37
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -166,6 +168,7 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
+            networkIP: 10.172.0.38
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -210,6 +213,7 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
+            networkIP: 10.172.0.39
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
