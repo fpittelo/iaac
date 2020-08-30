@@ -1,5 +1,5 @@
 ---
-- hosts: web
+- hosts: web, tweb
   become: yes
   remote_user: adminfpi
   vars:
