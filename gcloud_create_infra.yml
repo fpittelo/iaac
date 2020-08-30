@@ -65,6 +65,7 @@
     - name: Create Instance
       gcp_compute_instance:
         name: labsrv10
+        private_network_ip: 10.172.0.36
         machine_type: "{{ gcp_machine_type }}"
         metadata:
           from_file:
@@ -78,7 +79,6 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
-            networkIP: 10.172.0.36
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -123,7 +123,6 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
-            networkIP: 10.172.0.37
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -168,7 +167,6 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
-            networkIP: 10.172.0.38
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
@@ -213,7 +211,6 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
-            networkIP: 10.172.0.39
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
         zone: "{{ gcp_zone }}"
