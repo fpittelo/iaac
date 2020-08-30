@@ -22,7 +22,7 @@
       gcp_compute_network:
         name: "{{ network }}"
         project: "{{ gcp_project }}"
-        routing_mode: REGIONAL
+        routing_config: REGIONAL
         auto_create_subnetworks: 'true'
         auth_kind: "{{ gcp_cred_kind }}"
         service_account_file: "{{ gcp_service_account_file }}"
