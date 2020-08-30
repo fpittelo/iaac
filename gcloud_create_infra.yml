@@ -67,9 +67,9 @@
         name: labsrv10
         machine_type: "{{ gcp_machine_type }}"
         metadata:
-          from_file:
-          startup-script:
-          value: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
+          from_file: install_python.sh
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
+#         value: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
         disks:
         - auto_delete: 'true'
           boot: 'true'
