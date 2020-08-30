@@ -142,6 +142,8 @@
     - name: Create Address
       gcp_compute_address:
         name: labsrv12
+        address_type: INTERNAL
+        address: 10.172.0.38
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
@@ -190,6 +192,8 @@
     - name: Create Address
       gcp_compute_address:
         name: labsrv13
+        address_type: INTERNAL
+        address: 10.172.0.39
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
