@@ -41,7 +41,7 @@
 
     - name: Create Address
       gcp_compute_address:
-        name: labsrv10
+        name: labsrv02
         address_type: INTERNAL
         address: 10.172.0.14
         region: "{{ gcp_region }}"
@@ -53,7 +53,7 @@
 
     - name: Create Instance
       gcp_compute_instance:
-        name: labsrv10
+        name: labsrv02
         machine_type: "{{ gcp_machine_type }}"
         metadata:
           from_file: install_python.sh
