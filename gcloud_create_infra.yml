@@ -42,8 +42,6 @@
     - name: Create Address
       gcp_compute_address:
         name: labsrv10
-        address_type: INTERNAL
-        address: 10.172.0.36
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
@@ -58,7 +56,6 @@
         metadata:
           from_file: install_python.sh
           startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
-#         value: "#! /bin/bash\n\n# Installs Python\napt update\napt upgrade -y\napt -y install python"
         disks:
         - auto_delete: 'true'
           boot: 'true'
