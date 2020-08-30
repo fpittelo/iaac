@@ -65,7 +65,7 @@
     - name: Create Instance
       gcp_compute_instance:
         name: labsrv10
-        private_network_ip: 10.172.0.36
+        private_network_ip: "10.172.0.36"
         machine_type: "{{ gcp_machine_type }}"
         metadata:
           from_file:
