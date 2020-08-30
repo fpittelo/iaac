@@ -30,6 +30,7 @@
 
     - name: Set up Keys for Adminfpi
       authorized_key: user=adminfpi state=present key="{{ item }}"
+      no_log: true
       with_file:
         - /home/adminfpi/.ssh/id_rsa.pub
 
