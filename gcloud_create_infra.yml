@@ -163,6 +163,9 @@
       gcp_compute_instance:
         name: labsrv12
         machine_type: "{{ gcp_machine_type }}"
+        metadata:
+          from_file: install_python.sh
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
         disks:
         - auto_delete: 'true'
           boot: 'true'
@@ -208,6 +211,9 @@
       gcp_compute_instance:
         name: labsrv13
         machine_type: "{{ gcp_machine_type }}"
+        metadata:
+          from_file: install_python.sh
+          startup-script: "#! /bin/bash\n\n# Installs Python\napt update\napt -y install python"
         disks:
         - auto_delete: 'true'
           boot: 'true'
