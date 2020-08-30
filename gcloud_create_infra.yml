@@ -39,7 +39,6 @@
         state: present
       register: network
 
-
     - name: Create Address
       gcp_compute_address:
         name: labsrv10
