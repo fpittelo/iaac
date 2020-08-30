@@ -41,17 +41,17 @@
         state: present
       register: disk
 
-    - name: Create Address labsrv10
-      gcp_compute_address:
-        name: labsrv10
-        address_type: INTERNAL
-        address: 10.172.0.36
-        region: "{{ gcp_region }}"
-        project: "{{ gcp_project }}"
-        auth_kind: "{{ gcp_cred_kind }}"
-        service_account_file: "{{ gcp_service_account_file }}"
-        state: present
-      register: address
+#   - name: Create Address labsrv10
+#     gcp_compute_address:
+#       name: labsrv10
+#       address_type: INTERNAL
+#       address: 10.172.0.36
+#       region: "{{ gcp_region }}"
+#       project: "{{ gcp_project }}"
+#       auth_kind: "{{ gcp_cred_kind }}"
+#       service_account_file: "{{ gcp_service_account_file }}"
+#       state: present
+#     register: address
 
     - name: Create Instance labsrv10
       gcp_compute_instance:
