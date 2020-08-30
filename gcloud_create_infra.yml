@@ -92,6 +92,8 @@
     - name: Create Address
       gcp_compute_address:
         name: labsrv11
+        address_type: INTERNAL
+        address: 10.172.0.37
         region: "{{ gcp_region }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
