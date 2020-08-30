@@ -78,9 +78,9 @@
         - network: "{{ network }}"
           access_configs:
           - name: External NAT
-            private_network_ip: "10.172.0.36"
             nat_ip: "{{ address }}"
             type: ONE_TO_ONE_NAT
+          networkip: 10.172.0.36
         zone: "{{ gcp_zone }}"
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_auth_kind }}"
