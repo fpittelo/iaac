@@ -12,7 +12,7 @@
     gcp_service_account_file: /home/adminfpi/secure/iaac-237416-079a839e9e0c.json
     gcp_zone: 'europe-west6-b'
     gcp_region: 'europe-west6'
-    network: 'default'
+    network: 'iaac-vpc'
 
   tasks:
 
@@ -20,7 +20,7 @@
 
     - name: Create VPC Network
       gcp_compute_network:
-        name: iaac-vpc
+        name: "{{ network }}"
         project: "{{ gcp_project }}"
         auto_create_subnetworks: 'true'
         auth_kind: "{{ gcp_cred_kind }}"
