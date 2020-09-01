@@ -20,7 +20,7 @@
 
     - name: Create VPC Network
       gcp_compute_network:
-        name: "{{ network }}"
+        name: iaac-vpc
         project: "{{ gcp_project }}"
         auto_create_subnetworks: 'true'
         auth_kind: "{{ gcp_cred_kind }}"
