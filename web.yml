@@ -127,7 +127,7 @@
       git:
         repo: 'https://github.com/fpittelo/website.git'
         dest: /var/www/labsite
-        update: no
+        update: yes
         version: master
 
 #### WEB PAGE VERIFICATION ##############################
