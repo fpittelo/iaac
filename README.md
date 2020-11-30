@@ -1,5 +1,5 @@
 # iaac
-Infrastructure As A Code projects
+Infrastructure As A Code projects.
 
 Testing a Devops Approach with Ansible: Deploy servers + workload on 4 local VM with Internet connection.
 
